@@ -123,6 +123,13 @@ exports.Prisma.UserScalarFieldEnum = {
   password: 'password'
 };
 
+exports.Prisma.TracksScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  date: 'date'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -135,7 +142,8 @@ exports.Prisma.QueryMode = {
 
 
 exports.Prisma.ModelName = {
-  user: 'user'
+  user: 'user',
+  tracks: 'tracks'
 };
 
 /**

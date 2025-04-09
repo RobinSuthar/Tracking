@@ -19,4 +19,14 @@ model user{
  id        Int     @id @default(autoincrement())
  name String
  password String
+ 
+}
+
+
+
+model tracks{
+id   Int @id @default(autoincrement())
+title String
+description String
+date DateTime
 }
