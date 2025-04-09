@@ -12,6 +12,8 @@ export async function POST(req: NextRequest) {
       },
     });
 
+    console.log(correctUser);
+
     if (!correctUser) {
       return NextResponse.json({
         message: "Bro who the hell is this ?",
