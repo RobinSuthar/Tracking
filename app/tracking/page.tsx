@@ -1,3 +1,9 @@
+import Tracks from "../components/tracks";
+
 export default function Tracking() {
-  return <div>Tracking</div>;
+  return (
+    <div>
+      <Tracks />
+    </div>
+  );
 }
