@@ -10,7 +10,7 @@ export default function New() {
 
   async function handle(e: React.FormEvent) {
     e.preventDefault();
-    await axios.post("http://localhost:3000/api/tracking", {
+    await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tracking`, {
       data: {
         title: title,
         description: description,

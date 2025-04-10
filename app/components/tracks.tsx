@@ -2,7 +2,9 @@ import axios from "axios";
 import Link from "next/link";
 
 export default async function Tracks() {
-  const result = await axios.get("http://localhost:3000/api/tracking");
+  const result = await axios.get(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/tracking`
+  );
   const responseArray = result.data.message;
 
   type tracks = {

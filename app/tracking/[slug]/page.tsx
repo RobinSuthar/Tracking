@@ -11,7 +11,7 @@ export default async function Page({
   };
   const proviedId = (await params).slug;
   const result = await axios.get(
-    `http://localhost:3000/api/tracks/${proviedId}`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/tracks/${proviedId}`
   );
   const TrackResult: resultResponse = result["data"]["message"];
   return (
