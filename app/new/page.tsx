@@ -9,15 +9,13 @@ export default function New() {
   const [description, setDescription] = useState("");
 
   async function handle(e: React.FormEvent) {
-    e.preventDefault(); //
-    console.log("SAdas");
-    const result = await axios.post("http://localhost:3000/api/tracking", {
+    e.preventDefault();
+    await axios.post("http://localhost:3000/api/tracking", {
       data: {
         title: title,
         description: description,
       },
     });
-    console.log(result);
     redirect("/tracking");
   }
   return (
