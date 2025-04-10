@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import LoginForm from "../components/loginForm";
 import { redirect } from "next/navigation";
