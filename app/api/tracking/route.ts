@@ -8,8 +8,8 @@ export async function POST(req: NextRequest) {
 
   const tracks = await prisma.tracks.create({
     data: {
-      title: body.title,
-      description: body.description,
+      title: body.data.title,
+      description: body.data.description,
       date: new Date(),
     },
   });
@@ -22,10 +22,16 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET() {
-  const tracks = await prisma.tracks.findMany();
-  console.log(tracks);
+  try {
+    const tracks = await prisma.tracks.findMany();
+    console.log(tracks);
 
-  return NextResponse.json({
-    message: tracks,
-  });
+    return NextResponse.json({
+      message: tracks,
+    });
+  } catch (e) {
+    NextResponse.json({
+      message: e,
+    });
+  }
 }

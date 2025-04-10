@@ -11,8 +11,6 @@ export default function LoginForm() {
   async function handleClick(e: React.FormEvent) {
     e.preventDefault();
     try {
-      console.log(username);
-      console.log(password);
       const response = await axios.post(
         "http://localhost:3000/api/credentials",
         {
@@ -23,7 +21,7 @@ export default function LoginForm() {
 
       if (response.data.message.id) {
         alert("Login Success");
-        localStorage.setItem("trackingusername", response.data.message.usern);
+        localStorage.setItem("tracking", response.data.message.id);
         return router.push("/tracking");
       }
       return alert("Incorrect password");
